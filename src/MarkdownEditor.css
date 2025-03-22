@@ -1,0 +1,137 @@
+/* Markdown编辑器样式 */
+.markdown-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+  background-color: var(--toolbar-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.markdown-editor-container {
+  display: flex;
+  height: calc(100% - 56px); /* 减去工具栏高度 */
+  overflow: hidden;
+}
+
+.markdown-editor-pane,
+.markdown-preview-pane {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.markdown-editor-pane {
+  border-right: 1px solid var(--border-color);
+}
+
+.markdown-textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0;
+  outline: none;
+}
+
+/* 暗色主题变量 */
+[data-color-mode="dark"] {
+  --toolbar-bg: #2a2a2a;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 亮色主题变量 */
+[data-color-mode="light"] {
+  --toolbar-bg: #f5f5f5;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Markdown预览样式 */
+.markdown-preview-pane h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-preview-pane h2 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.markdown-preview-pane h3 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.markdown-preview-pane ul,
+.markdown-preview-pane ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.markdown-preview-pane p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.markdown-preview-pane blockquote {
+  border-left: 4px solid var(--border-color);
+  padding-left: 16px;
+  margin-left: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.markdown-preview-pane pre {
+  background-color: #2d2d2d;
+  padding: 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.markdown-preview-pane code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.markdown-preview-pane pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.markdown-preview-pane table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.markdown-preview-pane th,
+.markdown-preview-pane td {
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown-preview-pane th {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 亮色主题特定样式 */
+[data-color-mode="light"] .markdown-preview-pane blockquote {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+[data-color-mode="light"] .markdown-preview-pane pre {
+  background-color: #f0f0f0;
+}
+
+[data-color-mode="light"] .markdown-preview-pane code {
+  background-color: rgba(0, 0, 0, 0.05);
+}
